@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxforce Tiling - Expert Tiling Services Across Oxford & UK</title>
+    <meta name="description" content="Professional tiling services since 2008. Expert bathroom, kitchen, and outdoor tiling across Oxford and the UK. Premium craftsmanship, fully insured.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gold: #caa85e;
+            --light-gold: #f1d98c;
+            --gradient-gold: linear-gradient(135deg, #caa85e 0%, #f1d98c 100%);
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --background-white: #ffffff;
+            --background-light: #f8fafc;
+            --shadow-soft: 0 4px 20px rgba(202, 168, 94, 0.1);
+            --shadow-hover: 0 8px 30px rgba(202, 168, 94, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(202, 168, 94, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: var(--gradient-gold);
+            color: white !important;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-gold);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tile" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="%23f8fafc"/><rect width="20" height="20" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23tile)"/></svg>') repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: white;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #ffffff 0%, #fefcf7 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-stats {
+            background: var(--gradient-gold);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .about-stats h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-stats p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, #fefcf7 0%, #f8f4e6 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-learn-more {
+            background: var(--gradient-gold);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        .service-learn-more:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-learn-more i {
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: white;
+            z-index: 999;
+            transition: left 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .mobile-menu-close:hover {
+            color: var(--primary-gold);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .mobile-menu li {
+            margin: 2rem 0;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-gold);
+        }
+
+        .mobile-menu .cta-nav {
+            background: var(--gradient-gold);
+            color: white !important;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .mobile-menu .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Work Section */
+        .work {
+            background: linear-gradient(135deg, #ffffff 0%, #fefcf7 100%);
+        }
+
+        .work-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-item {
+            position: relative;
+            background: var(--background-light);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .work-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .work-image {
+            height: 250px;
+            background: var(--gradient-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .work-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .work-item:hover .work-overlay {
+            transform: translateY(0);
+        }
+
+        .work-overlay h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-overlay p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .view-btn {
+            background: white;
+            color: var(--primary-gold);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background: var(--primary-gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .gallery-btn {
+            background: var(--gradient-gold);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-btn i {
+            font-size: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: linear-gradient(135deg, #fefcf7 0%, #f8f4e6 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .feature-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, #ffffff 0%, #fefcf7 100%);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .review-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-gold);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section .btn {
+            background: white;
+            color: var(--primary-gold);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .cta-section .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #fefcf7 0%, #f8f4e6 100%);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: var(--background-light);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .contact-form h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        /* Multi-Step Form Styles */
+        .multi-step-form {
+            position: relative;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .form-step {
+            display: none;
+            animation: slideIn 0.4s ease-in-out;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .form-step h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .project-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-option {
+            cursor: pointer;
+        }
+
+        .project-option input[type="radio"] {
+            display: none;
+        }
+
+        .option-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            min-height: 140px;
+            justify-content: center;
+        }
+
+        .option-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .option-card i {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+        }
+
+        .option-card span {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .project-option input[type="radio"]:checked + .option-card {
+            border-color: var(--primary-gold);
+            background: var(--gradient-gold);
+            color: white;
+        }
+
+        .project-option input[type="radio"]:checked + .option-card i,
+        .project-option input[type="radio"]:checked + .option-card span {
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(202, 168, 94, 0.1);
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-buttons .btn-secondary {
+            background: #f8fafc;
+            color: var(--text-dark);
+            border: 2px solid #e2e8f0;
+        }
+
+        .form-buttons .btn-secondary:hover {
+            background: #e2e8f0;
+            color: var(--text-dark);
+        }
+
+        .form-progress {
+            margin-top: 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-gold);
+            transition: width 0.3s ease;
+            width: 25%;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-steps .step {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .progress-steps .step.active {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        /* Service Modal */
+        .service-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .service-modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 20px;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+        }
+
+        .service-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+            background: none;
+            border: none;
+        }
+
+        .service-modal-close:hover {
+            color: var(--primary-gold);
+        }
+
+        .service-modal-icon {
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-modal h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-modal p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Success Modal */
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .success-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 20px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .success-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 4rem 0 1rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-logo h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-logo p {
+            color: #a0aec0;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            color: #a0aec0;
+        }
+
+        .contact-item-footer i {
+            color: var(--primary-gold);
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-footer span {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid #4a5568;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #a0aec0;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .lightbox-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: 300px;
+            background: var(--gradient-gold);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .lightbox-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .lightbox-text p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-options {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+            }
+
+            /* Hide progress text on mobile */
+            .progress-steps {
+                display: none;
+            }
+
+            .progress-bar {
+                height: 6px;
+            }
+
+            .option-card {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .option-card i {
+                font-size: 2rem;
+            }
+
+            .option-card span {
+                font-size: 0.9rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card,
+            .feature-item {
+                padding: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .work-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 200px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Form Improvements */
+            .progress-steps {
+                display: none;
+            }
+
+            .progress-bar {
+                height: 6px;
+            }
+
+            .project-options {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .option-card {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .option-card i {
+                font-size: 2rem;
+            }
+
+            .option-card span {
+                font-size: 0.9rem;
+            }
+
+            .form-step h4 {
+                font-size: 1.3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .form-buttons {
+                margin-top: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            /* Mobile Contact Form - Make it wider */
+            .contact-form {
+                max-width: 98%;
+                padding: 1.5rem 1rem;
+            }
+
+            .multi-step-form {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Oxforce Tiling</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Our Services</a></li>
+                <li><a href="#work" class="nav-link">Our Work</a></li>
+                <li><a href="#contact" class="nav-link cta-nav">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">&times;</button>
+            <ul>
+                <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMobileMenu()">About</a></li>
+                <li><a href="#services" onclick="toggleMobileMenu()">Our Services</a></li>
+                <li><a href="#work" onclick="toggleMobileMenu()">Our Work</a></li>
+                <li><a href="#contact" class="cta-nav" onclick="toggleMobileMenu()">Get a Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Expert Tiling Services You Can Trust — Across Oxford and the UK</h1>
+                <p class="hero-subtitle">Since 2008, Oxforce Tiling has delivered expert tiling solutions for homes and businesses nationwide.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+                    <a href="#work" class="btn btn-secondary">View Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <p class="section-subtitle">Professional tiling services with over 15 years of experience</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Oxforce Tiling</h3>
+                    <p>Oxforce Tiling is based in Oxford and has been delivering expert tiling services across the UK since 2008. Our experienced tilers handle projects of all sizes, from bathrooms and kitchens to patios and terraces.</p>
+                    <p>We can assist you in sourcing premium tiles and ensure every job is completed with precision and care. Our commitment to quality and customer satisfaction has made us a trusted name in the tiling industry.</p>
+                </div>
+                <div class="about-stats">
+                    <h4>Over 15 years of experience</h4>
+                    <p>Trusted nationwide</p>
+                </div>
+            </div>
+            
+            <!-- CTA Button in About Section -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">We cover all aspects of tiling work on your property. Whether it's a full bathroom renovation or a small backsplash, our expert tilers deliver outstanding results — on time and within budget.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3 class="service-title">Bathroom Floor & Wall Tiling</h3>
+                    <p class="service-description">Complete bathroom tiling solutions with waterproofing and precision installation.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Bathroom Floor & Wall Tiling')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="service-title">Kitchen Floor & Wall Tiling</h3>
+                    <p class="service-description">Professional kitchen tiling including backsplashes and floor installations.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Kitchen Floor & Wall Tiling')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">Backsplash Tiling</h3>
+                    <p class="service-description">Custom backsplash designs to enhance your kitchen or bathroom.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Backsplash Tiling')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <h3 class="service-title">Hallway Tiling</h3>
+                    <p class="service-description">Durable and stylish hallway tiling solutions for high-traffic areas.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Hallway Tiling')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="service-title">Patio, Balcony & Terrace Tiling</h3>
+                    <p class="service-description">Weather-resistant outdoor tiling for patios, balconies, and terraces.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Patio, Balcony & Terrace Tiling')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="service-title">Marble & Mosaic</h3>
+                    <p class="service-description">Luxurious marble and intricate mosaic work for premium finishes.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Marble & Mosaic')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="service-title">Natural Stone</h3>
+                    <p class="service-description">Beautiful natural stone installations for unique and elegant spaces.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Natural Stone')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-square"></i>
+                    </div>
+                    <h3 class="service-title">Ceramic & Porcelain</h3>
+                    <p class="service-description">High-quality ceramic and porcelain tiles for all applications.</p>
+                    <button class="service-learn-more" onclick="openServiceModal('Ceramic & Porcelain')">
+                        <i class="fas fa-arrow-right"></i>
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            
+            <!-- CTA Button in Services -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section id="work" class="work section">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p class="section-subtitle">Browse some of our recent tiling projects — where craftsmanship meets perfection.</p>
+            
+            <div class="work-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="flooring">Flooring</button>
+                <button class="filter-btn" data-filter="bathrooms">Bathrooms</button>
+                <button class="filter-btn" data-filter="swimming-pools">Swimming Pools</button>
+                <button class="filter-btn" data-filter="staircases">Staircases</button>
+            </div>
+
+            <div class="work-grid">
+                <div class="work-item" data-category="flooring">
+                    <div class="work-image">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <div class="work-overlay">
+                        <h4>Luxury Flooring</h4>
+                        <p>Premium marble and ceramic flooring</p>
+                        <button class="view-btn" onclick="openLightbox('flooring1')">View Project</button>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="bathrooms">
+                    <div class="work-image">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <div class="work-overlay">
+                        <h4>Modern Bathroom</h4>
+                        <p>Contemporary bathroom with marble tiles</p>
+                        <button class="view-btn" onclick="openLightbox('bathroom1')">View Project</button>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="swimming-pools">
+                    <div class="work-image">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <div class="work-overlay">
+                        <h4>Pool Tiling</h4>
+                        <p>Professional swimming pool tiling</p>
+                        <button class="view-btn" onclick="openLightbox('pool1')">View Project</button>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="staircases">
+                    <div class="work-image">
+                        <i class="fas fa-stairs"></i>
+                    </div>
+                    <div class="work-overlay">
+                        <h4>Staircase Tiling</h4>
+                        <p>Elegant staircase with premium tiles</p>
+                        <button class="view-btn" onclick="openLightbox('staircase1')">View Project</button>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="bathrooms">
+                    <div class="work-image">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <div class="work-overlay">
+                        <h4>Luxury Bathroom</h4>
+                        <p>High-end bathroom renovation</p>
+                        <button class="view-btn" onclick="openLightbox('bathroom2')">View Project</button>
+                    </div>
+                </div>
+
+                <div class="work-item" data-category="flooring">
+                    <div class="work-image">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <div class="work-overlay">
+                        <h4>Kitchen Flooring</h4>
+                        <p>Durable ceramic kitchen flooring</p>
+                        <button class="view-btn" onclick="openLightbox('flooring2')">View Project</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Button in Our Work -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="gallery-btn" onclick="openGalleryModal()">
+                    <i class="fas fa-images"></i>
+                    View Gallery
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <p class="section-subtitle">Professional tiling services you can trust</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Established in 2008</h3>
+                    <p>Over 15 years of proven experience in the tiling industry</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Fully Qualified & Insured</h3>
+                    <p>Professional qualifications and comprehensive insurance coverage</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Premium Materials</h3>
+                    <p>We source only the highest quality tiles and materials</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Nationwide Coverage</h3>
+                    <p>Serving customers across Oxford and throughout the UK</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>Skilled tilers with attention to detail and precision</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Reliable & Professional</h3>
+                    <p>On-time delivery and professional service guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Don't just take our word for it — hear from our satisfied customers</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Oxforce Tiling transformed our bathroom completely. The attention to detail and quality of work was outstanding. Highly recommended!"</p>
+                    <div class="review-author">Sarah Mitchell</div>
+                    <div class="review-location">Oxford</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Professional, reliable, and excellent craftsmanship. Our kitchen tiles look amazing and the team was a pleasure to work with."</p>
+                    <div class="review-author">James Thompson</div>
+                    <div class="review-location">London</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"From start to finish, the service was exceptional. They completed our outdoor patio tiling on time and within budget. Will definitely use again!"</p>
+                    <div class="review-author">Emma Davis</div>
+                    <div class="review-location">Manchester</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to transform your space with expert tiling?</h2>
+            <a href="#contact" class="btn btn-primary">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to start your tiling project? Contact us for a free quote and consultation.</p>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Request Your Free Quote</h3>
+                    
+                    <!-- Multi-Step Contact Form -->
+                    <form id="contactForm" class="multi-step-form">
+                        <!-- Step 1: Project Type -->
+                        <div class="form-step active" data-step="1">
+                            <h4>What type of project do you have?</h4>
+                            <div class="project-options">
+                                <label class="project-option">
+                                    <input type="radio" name="projectType" value="bathroom" required>
+                                    <div class="option-card">
+                                        <i class="fas fa-bath"></i>
+                                        <span>Bathroom Tiling</span>
+                                    </div>
+                                </label>
+                                <label class="project-option">
+                                    <input type="radio" name="projectType" value="kitchen" required>
+                                    <div class="option-card">
+                                        <i class="fas fa-utensils"></i>
+                                        <span>Kitchen Tiling</span>
+                                    </div>
+                                </label>
+                                <label class="project-option">
+                                    <input type="radio" name="projectType" value="outdoor" required>
+                                    <div class="option-card">
+                                        <i class="fas fa-tree"></i>
+                                        <span>Outdoor Tiling</span>
+                                    </div>
+                                </label>
+                                <label class="project-option">
+                                    <input type="radio" name="projectType" value="other" required>
+                                    <div class="option-card">
+                                        <i class="fas fa-home"></i>
+                                        <span>Other Project</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-primary" onclick="goToStep(2)">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Project Details -->
+                        <div class="form-step" data-step="2">
+                            <h4>Tell us about your project</h4>
+                            <div class="form-group">
+                                <label for="projectSize">Project Size *</label>
+                                <select id="projectSize" name="projectSize" required>
+                                    <option value="">Select project size</option>
+                                    <option value="small">Small (1-2 rooms)</option>
+                                    <option value="medium">Medium (3-4 rooms)</option>
+                                    <option value="large">Large (5+ rooms)</option>
+                                    <option value="commercial">Commercial</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tileType">Preferred Tile Type</label>
+                                <select id="tileType" name="tileType">
+                                    <option value="">Select tile type</option>
+                                    <option value="ceramic">Ceramic</option>
+                                    <option value="porcelain">Porcelain</option>
+                                    <option value="marble">Marble</option>
+                                    <option value="natural-stone">Natural Stone</option>
+                                    <option value="mosaic">Mosaic</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="timeline">Preferred Timeline</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeline</option>
+                                    <option value="asap">ASAP</option>
+                                    <option value="1-month">Within 1 month</option>
+                                    <option value="2-3-months">2-3 months</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+                                <button type="button" class="btn btn-primary" onclick="goToStep(3)">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Project Description -->
+                        <div class="form-step" data-step="3">
+                            <h4>Describe your project</h4>
+                            <div class="form-group">
+                                <label for="projectDescription">Project Description *</label>
+                                <textarea id="projectDescription" name="projectDescription" rows="4" placeholder="Please describe your tiling project in detail..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="specialRequirements">Special Requirements</label>
+                                <textarea id="specialRequirements" name="specialRequirements" rows="3" placeholder="Any special requirements or preferences..."></textarea>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+                                <button type="button" class="btn btn-primary" onclick="goToStep(4)">Next</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Contact Information -->
+                        <div class="form-step" data-step="4">
+                            <h4>Your Contact Details</h4>
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location (City/Area) *</label>
+                                <input type="text" id="location" name="location" placeholder="e.g., Oxford, London, Manchester" required>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(3)">Back</button>
+                                <button type="submit" class="btn btn-primary" onclick="submitForm()">Get Free Quote</button>
+                            </div>
+                        </div>
+
+                        <!-- Progress Indicator -->
+                        <div class="form-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-steps">
+                                <span class="step active" data-step="1">Project</span>
+                                <span class="step" data-step="2">Details</span>
+                                <span class="step" data-step="3">Description</span>
+                                <span class="step" data-step="4">Contact</span>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Modal -->
+                    <div id="successModal" class="success-modal" style="display: none;">
+                        <div class="success-content">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Quote Request Submitted!</h3>
+                            <p>Thank you for your request. We will contact you within 24 hours with your free quote.</p>
+                            <button class="btn btn-primary" onclick="closeSuccessModal()">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Oxford, UK<br>Nationwide coverage</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p>01865 123 456<br>Available 8AM-6PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p>info@oxforcetiling.co.uk<br>We respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Oxforce Tiling</h3>
+                        <p>Expert tiling services since 2008. Professional, reliable, and fully insured tiling solutions across Oxford and the UK.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Bathroom Tiling</a></li>
+                        <li><a href="#services">Kitchen Tiling</a></li>
+                        <li><a href="#services">Outdoor Tiling</a></li>
+                        <li><a href="#services">Marble & Mosaic</a></li>
+                        <li><a href="#services">Natural Stone</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#work">Our Work</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Get Quote</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item-footer">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Oxford, UK<br>Nationwide Coverage</span>
+                        </div>
+                        <div class="contact-item-footer">
+                            <i class="fas fa-phone"></i>
+                            <span>01865 123 456</span>
+                        </div>
+                        <div class="contact-item-footer">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@oxforcetiling.co.uk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Oxforce Tiling. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="service-modal" style="display: none;">
+        <div class="service-modal-content">
+            <button class="service-modal-close" onclick="closeServiceModal()">&times;</button>
+            <div class="service-modal-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3>Custom Service Page</h3>
+            <p>If you like this website design, we will build out this page for you with detailed information about this service, pricing, and more.</p>
+            <button class="btn btn-primary" onclick="closeServiceModal()">Got it!</button>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="service-modal" style="display: none;">
+        <div class="service-modal-content">
+            <button class="service-modal-close" onclick="closeGalleryModal()">&times;</button>
+            <div class="service-modal-icon">
+                <i class="fas fa-images"></i>
+            </div>
+            <h3>Custom Gallery Page</h3>
+            <p>If you like this website design, we will build out a dedicated gallery page for you with high-quality project images, detailed case studies, and before/after comparisons.</p>
+            <button class="btn btn-primary" onclick="closeGalleryModal()">Got it!</button>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" style="display: none;">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-image">
+                <i class="fas fa-image"></i>
+            </div>
+            <div class="lightbox-text">
+                <h3 id="lightboxTitle">Project Title</h3>
+                <p id="lightboxDescription">Project description</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Multi-Step Form
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function goToStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // Show target step
+            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+            
+            // Update current step
+            currentStep = step;
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progressPercentage = (currentStep / totalSteps) * 100;
+            progressFill.style.width = progressPercentage + '%';
+            
+            // Update step indicators
+            document.querySelectorAll('.progress-steps .step').forEach((step, index) => {
+                step.classList.remove('active');
+                if (index + 1 <= currentStep) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        // Form submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            if (!name || !email) {
+                alert('Please fill in your name and email address.');
+                return;
+            }
+            
+            // Show success modal
+            document.getElementById('successModal').style.display = 'flex';
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').style.display = 'none';
+            document.getElementById('contactForm').reset();
+            goToStep(1);
+        }
+
+        // Work Gallery Filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const workItems = document.querySelectorAll('.work-item');
+                
+                workItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functions
+        function openLightbox(projectId) {
+            const lightbox = document.getElementById('lightbox');
+            const title = document.getElementById('lightboxTitle');
+            const description = document.getElementById('lightboxDescription');
+            
+            // Set content based on project ID
+            const projects = {
+                'flooring1': { title: 'Luxury Flooring', description: 'Premium marble and ceramic flooring installation with precision craftsmanship.' },
+                'bathroom1': { title: 'Modern Bathroom', description: 'Contemporary bathroom with marble tiles and modern fixtures.' },
+                'pool1': { title: 'Pool Tiling', description: 'Professional swimming pool tiling with waterproof materials and expert installation.' },
+                'staircase1': { title: 'Staircase Tiling', description: 'Elegant staircase with premium tiles and non-slip finish for safety.' },
+                'bathroom2': { title: 'Luxury Bathroom', description: 'High-end bathroom renovation with premium finishes and modern design.' },
+                'flooring2': { title: 'Kitchen Flooring', description: 'Durable ceramic kitchen flooring with easy maintenance and stylish appearance.' }
+            };
+            
+            const project = projects[projectId] || { title: 'Project', description: 'Professional tiling work' };
+            title.textContent = project.title;
+            description.textContent = project.description;
+            
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Service Modal functions
+        function openServiceModal(serviceName) {
+            document.getElementById('serviceModal').style.display = 'flex';
+        }
+
+        function closeServiceModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+        }
+
+        // Gallery Modal functions
+        function openGalleryModal() {
+            document.getElementById('galleryModal').style.display = 'flex';
+        }
+
+        function closeGalleryModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        // Initialize form
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
